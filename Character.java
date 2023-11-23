@@ -47,6 +47,11 @@ public class Character extends AbstractCharacter{
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return (this.place == null ? this.name : this.name + " находится в " + (this.place == Place.SKY ? "небо" : (this.place == Place.FLOOR ? "пол" : "стоя")));
+    }
+
     public boolean addAction(Action action){
         if(this.actions.add(action)) {
             System.out.println("Персонажу " + this.name + " добавлено действие " + action.toString());
